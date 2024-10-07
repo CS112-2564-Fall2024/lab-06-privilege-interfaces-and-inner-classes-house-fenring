@@ -82,7 +82,7 @@ public class Person implements Comparable<Person> {
 	// INTERFACE METHODS
 	/***** TODO: (Part 1) override compareTo method to implement Comparable interface*****/
 	@Override
-    public int compareTo(Person other) {
+	public int compareTo(Person other) {
         return Integer.compare(this.privilege, other.privilege);
     }
 }

@@ -72,14 +72,22 @@ public class Main
 				case 2:
 					System.out.println(self);
 					break;
-				case 3:
+					case 3:
 					System.out.println("Comparing your privilege estimate with others:");
-					for (Person person : people) {
-						if (person != self) { // Avoid comparing with self
-							int comparison = self.compareTo(person);
-							String comparisonResult = (comparison > 0) ? "greater than" : (comparison < 0) ? "less than" : "equal to"; ///gpt refactor
-							System.out.println(self.getName() + "'s privilege is " + comparisonResult + " " + person.getName() + "'s privilege."); 
+					// Sort people by privilege
+					for (int i = 0; i < people.length - 1; i++) {
+						for (int j = 0; j < people.length - 1 - i; j++) {
+							if (people[j].compareTo(people[j + 1]) > 0) {
+								Person temp = people[j];
+								people[j] = people[j + 1];
+								people[j + 1] = temp;
+							}
 						}
+					}
+				
+					// Print sorted people
+					for (Person person : people) {
+						System.out.println(person);
 					}
 					System.out.println("\nReturning to main menu.\n");
 					break;
