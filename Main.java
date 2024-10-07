@@ -77,8 +77,8 @@ public class Main
 					for (Person person : people) {
 						if (person != self) { // Avoid comparing with self
 							int comparison = self.compareTo(person);
-							String comparisonResult = (comparison > 0) ? "greater than" : (comparison < 0) ? "less than" : "equal to";
-							System.out.println(self.getName() + "'s privilege is " + comparisonResult + " " + person.getName() + "'s privilege.");
+							String comparisonResult = (comparison > 0) ? "greater than" : (comparison < 0) ? "less than" : "equal to"; ///gpt refactor
+							System.out.println(self.getName() + "'s privilege is " + comparisonResult + " " + person.getName() + "'s privilege."); 
 						}
 					}
 					System.out.println("\nReturning to main menu.\n");
