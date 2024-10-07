@@ -1,5 +1,4 @@
-public class Person
-{
+public class Person implements Comparable<Person> {
 	/***** TODO: (Part 2) create helper inner class for Identity*****/
 
 	// CONSTANT VARIABLES
@@ -82,4 +81,8 @@ public class Person
 
 	// INTERFACE METHODS
 	/***** TODO: (Part 1) override compareTo method to implement Comparable interface*****/
+	@Override
+    public int compareTo(Person other) {
+        return Integer.compare(this.privilege, other.privilege);
+    }
 }
